@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>jQuery Mobile Bootstrap Theme</title>
 		<link rel="stylesheet" href="themes/Bootstrap.css">
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="src/jquery.mobile-1.4.5.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="src/jquery-1.11.1.min.js"></script>
+		<script src="src/jquery.mobile-1.4.5.min.js"></script>
 		<style>
 		.ui-page,.ui-body-c, .ui-overlay-c  { 
 			background:#fff;
@@ -23,9 +23,13 @@
 			</div>
 			<div data-role="content" data-theme="a">
 			<form method="post" action="demoform.asp">
+					<div data-role="fieldcontain" style="margin-top:50px">
+						<label for="user_name">Recipient:</label>
+						<input type="text" name="user_name" id="user_name" value="User1"  />
+					</div>
 				  <div class="ui-field-contain">
-					<label for="info">Message Body:</label>
-					<textarea rows="5" name="addinfo" id="info"></textarea>
+					<label for="info">Body:</label>
+					<textarea style="height:200px; width:100%" name="addinfo" id="info"></textarea>
 				  </div>
 				  <input type="submit" data-inline="true" value="Send">
 				</form>
