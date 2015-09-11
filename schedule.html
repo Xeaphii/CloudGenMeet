@@ -9,7 +9,10 @@
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		style>
+		<link rel="stylesheet" type="text/css" href="src/jquery.ptTimeSelect.css" />
+		<script type="text/javascript" src="src/jquery.ptTimeSelect.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/redmond/jquery-ui.css" />
+		<style>
 		.ui-page,.ui-body-c, .ui-overlay-c  { 
 			background:#fff;
 			}
@@ -21,9 +24,13 @@
 				<h1>CloudGen</h1>
 				<a href="index.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
-			<div
-			data-role="content" data-theme="a">
-			
+			<div data-role="content" data-theme="a">
+			<input name="time" value="" />
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('input[name="time"]').ptTimeSelect();
+				});
+			</script>
 			
 		</div>
 		<div data-role="footer" data-position="fixed">	
