@@ -9,13 +9,17 @@
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		
+		style>
+		.ui-page,.ui-body-c, .ui-overlay-c  { 
+			background:#fff;
+			}
+		</style>
 	</head>
 	<body>
 		<div data-role="page" data-theme="a" >
 			<div data-role="header" data-position="inline">
 				<h1>CloudGen</h1>
-				<a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
+				<a href="index.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
 			<div
 			data-role="content" data-theme="a">
@@ -26,7 +30,7 @@
 		<div data-role="navbar">
 					<ul>
 						<li><a href="index.html" data-icon="user">Profile</a></li>
-						<li><a href="schedule.html" data-icon="calendar" class="ui-btn-active">Schedule</a></li>
+						<li><a href="schedule.html" data-icon="calendar" class="ui-btn-active ui-state-persist">Schedule</a></li>
 						<li><a href="showcase.html" data-icon="shop">Briefcase</a></li>
 						<li><a href="info.html" data-icon="info">Info</a></li>
 					</ul>
