@@ -9,9 +9,7 @@
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="src/jquery.ptTimeSelect.css" />
-		<script type="text/javascript" src="src/jquery.ptTimeSelect.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/redmond/jquery-ui.css" />
+		
 		<style>
 		.ui-page,.ui-body-c, .ui-overlay-c  { 
 			background:#fff;
@@ -22,32 +20,42 @@
 		<div data-role="page" data-theme="a" >
 			<div data-role="header" data-position="inline">
 				<h1>CloudGen</h1>
-				<a href="index.html" data-icon="comment" class="ui-btn-right">Inbox</a>
+				<a href="inbox.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
 			<div data-role="content" data-theme="a">
-			<form method="post" action="demoform.asp">
-				  <div class="ui-field-contain">
-					<label for="time_">Choose time:</label>
-						<input name="time" value="" id="time_"/>
-					<label for="date_">Choose date:</label>
-					<input type="text" name="date_" id="date_">
-					<label for="select-choice-1" class="select">Choose topic</label>
-				<select name="select-choice-1" id="select-choice-1">
-					<option value="standard">Topic 1</option>
-					<option value="rush">Topic 2</option>
-					<option value="express">Topic 3</option>
-					<option value="overnight">Topic 4</option>
-				</select>
-				  </div>
-				  <input type="submit" data-inline="true" value="Submit">
+
+
+				<form action="#" method="get">
+
+					<h4 style="margin-top:40px">Choose topic, date and time for scheduling meeting</h4>
+
+
+					<div data-role="fieldcontain" style="margin-top:50px">
+						<label for="time_">Enter time:</label>
+						<input type="text" name="time_" id="time_" value=""  />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="date_">Enter date:</label>
+						<input type="text" name="date_" id="date_" value=""  />
+					</div>
+					<div data-role="fieldcontain">
+					<label for="select_topic" class="select">Choose topic:</label>
+					<select name="select-choice-1" id="select_topic">
+						<option value="standard">Topic 1</option>
+						<option value="rush">Topic 2</option>
+						<option value="express">Topic 3</option>
+						<option value="overnight">Topic 4</option>
+					</select>
+					</div>
+					<div class="ui-grid-solo" style="margin-top:40px">
+						<div class="ui-block-a">
+							 <input type="submit" name="Action" value="Schedule" data-theme="a"/>
+						</div>
+					</div>
+						
 				</form>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$('input[name="time"]').ptTimeSelect();
-				});
-			</script>
-			
-		</div>
+
+			</div>
 		<div data-role="footer" data-position="fixed">	
 		<div data-role="navbar">
 					<ul>
