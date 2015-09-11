@@ -25,7 +25,22 @@
 				<a href="index.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
 			<div data-role="content" data-theme="a">
-			<input name="time" value="" />
+			<form method="post" action="demoform.asp">
+				  <div class="ui-field-contain">
+					<label for="time_">Choose time:</label>
+						<input name="time" value="" id="time_"/>
+					<label for="date_">Choose date:</label>
+					<input type="text" name="date_" id="date_">
+					<label for="select-choice-1" class="select">Choose topic</label>
+				<select name="select-choice-1" id="select-choice-1">
+					<option value="standard">Topic 1</option>
+					<option value="rush">Topic 2</option>
+					<option value="express">Topic 3</option>
+					<option value="overnight">Topic 4</option>
+				</select>
+				  </div>
+				  <input type="submit" data-inline="true" value="Submit">
+				</form>
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$('input[name="time"]').ptTimeSelect();
