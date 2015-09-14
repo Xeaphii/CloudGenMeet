@@ -1,0 +1,9 @@
+http://xeamphiil.co.nf/CloudGen/InsertUser.php?first_name=zeeshan&last_name=karamat&phone_no=03236229970&email_id=z@g.com&company_name=xeaphii&designation=software%20engineer
+
+http://xeamphiil.co.nf/CloudGen/UserDetails.php?user_id=1
+
+http://xeamphiil.co.nf/CloudGen/MakeMeeting.php/MakeMeeting.php?user_id=1&topic=Dev&date_meet=1/1/1994&time_meet=01:50
+
+http://xeamphiil.co.nf/CloudGen/SendMessage.php?user_id=1&message_body=I%20want%20to%20reschedule%20that%20meeting
+
+http://xeamphiil.co.nf/CloudGen/GetMessages.php?user_id=0
