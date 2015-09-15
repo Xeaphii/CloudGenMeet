@@ -9,74 +9,39 @@
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="src/jquery-1.11.1.min.js"></script>
 		<script src="src/jquery.mobile-1.4.5.min.js"></script>
-		<style>
-		.ui-page,.ui-body-c, .ui-overlay-c  { 
-			background:#fff;
-			}
-		</style>
+		
 	</head>
 	<body>
-		<div data-role="page" data-theme="a" >
+		<div data-role="page" data-theme="b" >
 			<div data-role="header" data-position="inline">
 				<h1>Inbox</h1>
 				<a href="index.html" data-icon="back" class="ui-btn-left">Back</a>
 			</div>
-			<div data-role="content" data-theme="a">
+			<div data-role="content" data-theme="b" id = "messages_list">
 
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right">
-						<a href="sendmessage.html" >Reply</a>
-					</li>
-					<li >
-					<h4>From: User 1</h4>
-							<p>Body of the message</p>
-							
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right">
-						<a href="sendmessage.html" >Reply</a>
-					</li>
-					<li >
-					<h4>From: User 1</h4>
-							<p>Body of the message</p>
-							
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right">
-						<a href="sendmessage.html" >Reply</a>
-					</li>
-					<li >
-					<h4>From: User 1</h4>
-							<p>Body of the message</p>
-							
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right">
-						<a href="sendmessage.html" >Reply</a>
-					</li>
-					<li >
-					<h4>From: User 1</h4>
-							<p>Body of the message</p>
-							
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right">
-						<a href="sendmessage.html" >Reply</a>
-					</li>
-					<li >
-					<h4>From: User 1</h4>
-							<p>Body of the message</p>
-							
-					</li>
-				</ul>
+				
+				
 				
 
 			</div>
-			
+			<script>
+			$.get("http://xeamphiil.co.nf/CloudGen/GetMessages.php", { user_id:1}, function(data, status){
+				input = "admin:clicked;admin:;admin:;admin:;admin:Appointment from zeeshan karamat for topicTopic 1 at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:I want to reschedule that meeting;admin:Appointment from zeeshan karamat for topicDev at 1/1/1994 and time 01:50";
+				input = input.split(";");
+				output = "";
+				for(i = 0 ; i < input.length;i++){
+					row = input[i].split(":");
+					
+					output = output+ "<ul data-role='listview' data-inset='true' data-divider-theme='a'>";
+					output = output+"<li data-role='list-divider' class='ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right'>";
+					output = output+"<a href='sendmessage.html' >Reply</a> </li> <li >";
+					output = output+"<h4>From: "+row[0]+"</h4>";
+					output = output+"<p>"+row[1].substr(0, 40)+"</p>";
+					output = output+"</li>	</ul>";
+				}
+				document.getElementById("messages_list").innerHTML =output;
+			}
+			</script>
 		
 	</body>
 </html>

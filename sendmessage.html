@@ -16,26 +16,34 @@
 		</style>
 	</head>
 	<body>
-		<div data-role="page" data-theme="a" >
+		<div data-role="page" data-theme="b" >
 			<div data-role="header" data-position="inline">
 				<h1>Send Message</h1>
 				<a href="index.html" data-icon="back" class="ui-btn-left">Back</a>
 			</div>
-			<div data-role="content" data-theme="a">
+			<div data-role="content" data-theme="b">
 			<IMG style="margin-left: 20px;" src="img/logo.png" alt="logo">
 			<form method="post" action="demoform.asp" style="margin-top:50px">
 					<div style="width:90%;margin-left:5%" data-role="fieldcontain" style="margin-top:50px">
 						<label style="margin-left:-5%" for="user_name">Recipient</label>
-						<input  type="text" name="user_name" id="user_name" value="User1"  />
+						<input  type="text" name="user_name" id="user_name" value="Admin"  />
 					</div>
 				  <div class="ui-field-contain">
 					<label for="info">Body</label>
-					<textarea rows="10" style=" width:90%;margin-left:5%;" name="addinfo" class="foo" id="info"></textarea>
+					<textarea rows="10" style=" width:90%;margin-left:5%;" name="addinfo" class="foo" id="addinfo"></textarea>
 				  </div>
-				  <input class="ui-content" type="submit" value="Send">
+				 
 				</form>
-				
-
+				<script>
+				function OnSubmit(){
+								//alert($('textarea[name=addinfo]').val());
+								$.get("http://xeamphiil.co.nf/CloudGen/SendMessage.php", { user_id:0, 
+								message_body:$('textarea[name=addinfo]').val()}, function(data, status){
+									alert("Data: " + data + "\nStatus: " + status);
+								});
+						}
+					</script>
+			<input class="ui-content" type="submit" value="Send" onclick="OnSubmit()">
 			</div>
 			
 		

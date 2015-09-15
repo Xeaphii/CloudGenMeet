@@ -3,25 +3,22 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>jQuery Mobile Bootstrap Theme</title>
+		<title>CloudGen</title>
 		<link rel="stylesheet" href="themes/Bootstrap.css">
 		<link rel="stylesheet" href="src/jquery.mobile-1.4.5.min.css" />
+		
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="src/jquery-1.11.1.min.js"></script>
 		<script src="src/jquery.mobile-1.4.5.min.js"></script>
-		<style>
-		.ui-page,.ui-body-c, .ui-overlay-c  { 
-			background:#fff;
-			}
-		</style>
+		
 	</head>
 	<body>
-		<div data-role="page" data-theme="a" >
+		<div data-role="page" data-theme="b" >
 			<div data-role="header" data-position="inline">
 				<h1>CloudGen</h1>
 				<a href="inbox.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
-			<div data-role="content" data-theme="a">
+			<div data-role="content" data-theme="b">
 			
 			
 			
@@ -39,32 +36,50 @@
 			  
 			<div class="ui-grid-a" style="margin-top:10px;margin-left:10%">
 					  <div style="width:30%" class="ui-block-a"><span><b>Name:</b></span></div>
-					  <div style="width:60%" class="ui-block-b"><span>John Doe</span></div>
+					  <div style="width:60%" class="ui-block-b"><span id = "first_name">John Doe</span></div>
+					
+			  </div>
+			  <div class="ui-grid-a" style="margin-top:9px;margin-left:10%">
+					  <div style="width:30%" class="ui-block-a"><span><b>Last Name:</b></span></div>
+					  <div style="width:60%" class="ui-block-b"><span id = "last_name">Last Name/span></div>
 					
 			  </div>
 			  <div class="ui-grid-a" style="margin-top:9px;margin-left:10%">
 					  <div style="width:30%" class="ui-block-a"><span><b>Company:</b></span></div>
-					  <div style="width:60%" class="ui-block-b"><span>Jome company name</span></div>
+					  <div style="width:60%" class="ui-block-b"><span id = "company_name">Company name</span></div>
 					
 			  </div>
 			  <div class="ui-grid-a" style="margin-top:9px;margin-left:10%">
 					  <div style="width:30%" class="ui-block-a"><span><b>Designation:</b></span></div>
-					  <div style="width:60%" class="ui-block-b"><span>Some occupation</span></div>
+					  <div style="width:60%" class="ui-block-b"><span id = "designation">Some occupation</span></div>
 					
 			  </div>
 			  <div class="ui-grid-a" style="margin-top:9px;margin-left:10%">
 					  <div style="width:30%" class="ui-block-a"><span><b>Email:</b></span></div>
-					  <div style="width:60%" class="ui-block-b"><span>johndoe@example.com</span></div>
+					  <div style="width:60%" class="ui-block-b"><span id = "email_id">johndoe@example.com</span></div>
 					</div>
 			  
 			  <div class="ui-grid-a" style="margin-top:9px;margin-left:10%">
 					  <div style="width:30%" class="ui-block-a"><span><b>Mobile:</b></span></div>
-					  <div style="width:60%" class="ui-block-b"><span> +923236229970</span></div>
+					  <div style="width:60%" class="ui-block-b"><span id = "mobile_no"> +923236229970</span></div>
 					</div>
 			 
 			  </div>
 			  
 		</div>
+		<script>
+				
+				$.get("http://xeamphiil.co.nf/CloudGen/UserDetails.php", { user_id:1}, function(data, status){
+									input = data.split(":");
+									document.getElementById("first_name").innerHTML =input[0];
+									document.getElementById("last_name").innerHTML =input[1];
+									document.getElementById("company_name").innerHTML =input[4];
+									document.getElementById("designation").innerHTML =input[5];
+									document.getElementById("email_id").innerHTML =input[3];
+									document.getElementById("mobile_no").innerHTML =input[2];
+								});		
+						
+		</script>
 		<div data-role="footer" data-position="fixed">	
 		<div data-role="navbar">
 					<ul>

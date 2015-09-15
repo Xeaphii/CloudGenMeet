@@ -10,19 +10,14 @@
 		<script src="src/jquery-1.11.1.min.js"></script>
 		<script src="src/jquery.mobile-1.4.5.min.js"></script>
 		
-		<style>
-		.ui-page,.ui-body-c, .ui-overlay-c  { 
-			background:#fff;
-			}
-		</style>
 	</head>
 	<body>
-		<div data-role="page" data-theme="a" >
+		<div data-role="page" data-theme="b" >
 			<div data-role="header" data-position="inline">
 				<h1>CloudGen</h1>
 				<a href="inbox.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
-			<div data-role="content" data-theme="a">
+			<div data-role="content" data-theme="b">
 
 
 				<form action="#" method="get">
@@ -40,20 +35,31 @@
 					</div>
 					<div data-role="fieldcontain">
 					<label for="select_topic" class="select">Choose topic:</label>
-					<select name="select-choice-1" id="select_topic">
+					<select name="select-choice-1" id="combo" name="select_topic">
 						<option value="standard">Topic 1</option>
 						<option value="rush">Topic 2</option>
 						<option value="express">Topic 3</option>
 						<option value="overnight">Topic 4</option>
 					</select>
 					</div>
-					<div class="ui-grid-solo" style="margin-top:40px">
-						<div class="ui-block-a">
-							 <input type="submit" name="Action" value="Schedule" data-theme="a"/>
-						</div>
-					</div>
+					
 						
 				</form>
+				<script>
+				function onSubmitButton(){
+							//	alert($('#combo :selected').text());
+								$.get("http://xeamphiil.co.nf/CloudGen/MakeMeeting.php/MakeMeeting.php", { user_id:1, 
+								topic:$('#combo :selected').text(), date_meet:$('input[name=date_]').val()
+								, time_meet:$('input[name=time_]').val()}, function(data, status){
+									alert("Data: " + data + "\nStatus: " + status);
+								});
+						}
+					</script>
+				<div class="ui-grid-solo" style="margin-top:40px">
+						<div class="ui-block-a">
+							 <input type="submit" name="Action" value="Schedule" data-theme="a" onclick="onSubmitButton()"/>
+						</div>
+					</div>
 
 			</div>
 		<div data-role="footer" data-position="fixed">	

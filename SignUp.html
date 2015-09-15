@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>jQuery Mobile Bootstrap Theme</title>
+		<title>CloudGen</title>
 		<link rel="stylesheet" href="themes/Bootstrap.css">
 		<link rel="stylesheet" href="src/jquery.mobile-1.4.5.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
@@ -11,52 +11,64 @@
 		<script src="src/jquery.mobile-1.4.5.min.js"></script>
 	</head>
 	<body>
-		<div data-role="page" data-theme="a">
+		<div data-role="page" data-theme="b">
 			<div data-role="header" data-position="inline">
 				<h1>CloudGen</h1>
 				<a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
 </div>
-			<div data-role="content" data-theme="a">
+			<div data-role="content" data-theme="b">
 
 
-				<form action="#" method="get">
+				<form action="#" >
 
 					<h4 style="margin-top:40px">Please provide details to continue</h4>
 
 
 					<div data-role="fieldcontain" style="margin-top:50px">
-						<label for="name">First Name:</label>
-						<input type="text" name="f_name" id="f_name" value=""  />
+						<label for="first_name">First Name:</label>
+						<input type="text" name="first_name" id="first_name" value=""  />
 					</div>
 					<div data-role="fieldcontain">
-						<label for="name">Last Name:</label>
-						<input type="text" name="l_name" id="l_name" value=""  />
+						<label for="last_name">Last Name:</label>
+						<input type="text" name="last_name" id="last_name" value=""  />
 					</div>
 					<div data-role="fieldcontain">
-						<label for="name">Phone Number:</label>
-						<input type="text" name="phone_number" id="phone_number" value=""  />
+						<label for="phone_no">Phone Number:</label>
+						<input type="text" name="phone_no" id="phone_no" value=""  />
 					</div>
 					<div data-role="fieldcontain">
-						<label for="name">Email Address:</label>
-						<input type="email" name="email" id="email" value=""  />
+						<label for="email_id">Email Address:</label>
+						<input type="email" name="email_id" id="email_id" value=""  />
 					</div>
 					
 					<div data-role="fieldcontain">
-						<label for="name">Company Name:</label>
-						<input type="text" name="c_name" id="c_name" value=""  />
+						<label for="company_name">Company Name:</label>
+						<input type="text" name="company_name" id="company_name" value=""  />
 					</div>
 					<div data-role="fieldcontain">
-						<label for="name">Designation</label>
+						<label for="designation">Designation</label>
 						<input type="text" name="designation" id="designation" value=""  />
 					</div>
+					
+						
+				</form>
+				
+				<script>
+				function onSubmitButton(){
+								window.location.href = "index.html";
+								$.get("http://xeamphiil.co.nf/CloudGen/InsertUser.php", { first_name:$('input[name=first_name]').val(), 
+								last_name:$('input[name=last_name]').val(), phone_no:$('input[name=phone_no]').val()
+								, email_id:$('input[name=email_id]').val(), company_name:$('input[name=company_name]').val()
+								, designation:$('input[name=designation]').val() }, function(data, status){
+									alert("Data: " + data + "\nStatus: " + status);
+								});
+						}
+					</script>
 					<div class="ui-grid-solo" style="margin-top:40px">
 						<div class="ui-block-a">
-							 <input type="submit" name="Action" value="Register" data-theme="a"/>
+							 <input type="submit" value="Register" onclick="onSubmitButton()" data-theme="a"/>
 						</div>
 					</div>
-						
-					</div>
-				</form>
 
 			</div>
 		</div>
