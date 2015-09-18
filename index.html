@@ -10,7 +10,33 @@
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="src/jquery-1.11.1.min.js"></script>
 		<script src="src/jquery.mobile-1.4.5.min.js"></script>
+		<style>
 		
+		.ui-icon-prof {
+		  background: url(img/prof.png) 50% 25% no-repeat rgba(230, 230, 230, 0.2) !important;
+		 background-size: 16px 16px;
+		  box-shadow: none;
+		  -webkit-box-shadow: none;
+		}
+		.ui-icon-bag {
+		  background: url(img/bag.png) 50% 25% no-repeat rgba(230, 230, 230, 0.2) !important;
+		 background-size: 16px 16px;
+		  box-shadow: none;
+		  -webkit-box-shadow: none;
+		}
+		.ui-icon-calen {
+		  background: url(img/calen.png) 50% 25% no-repeat rgba(230, 230, 230, 0.2) !important;
+		 background-size: 16px 16px;
+		  box-shadow: none;
+		  -webkit-box-shadow: none;
+		}
+		.ui-icon-inf {
+		  background: url(img/inf.png) 50% 25% no-repeat rgba(230, 230, 230, 0.2) !important;
+		 background-size: 16px 16px;
+		  box-shadow: none;
+		  -webkit-box-shadow: none;
+		}
+		</style>
 	</head>
 	<body>
 		<div data-role="page" data-theme="b" >
@@ -22,17 +48,17 @@
 			
 			
 			
-			<div class="ui-grid-a">
+		<!--	<div class="ui-grid-a">
 			  <div style="position: relative; width: 145%; height: 300px; left:-45%;top:-150px">
 				<img  src="img/profile.png"></img>
-			  </div>
+			  </div> 	-->
 			  
 			  
 			
 		</div>
 		<div class="ui-grid-a">
 		<div>
-		<h2>Personal Details</h2>
+		<h2 style="margin-top:10px;margin-left:5%">Personal Details</h2>
 			  
 			<div class="ui-grid-a" style="margin-top:10px;margin-left:10%">
 					  <div style="width:30%" class="ui-block-a"><span><b>Name:</b></span></div>
@@ -83,10 +109,10 @@
 		<div data-role="footer" data-position="fixed">	
 		<div data-role="navbar">
 					<ul>
-						<li><a href="index.html" data-icon="user" class="ui-btn-active ui-state-persist">Profile</a></li>
-						<li><a href="schedule.html" data-icon="calendar">Schedule</a></li>
-						<li><a href="showcase.html" data-icon="shop">Briefcase</a></li>
-						<li><a href="info.html" data-icon="info">Info</a></li>
+						<li><a  href="index.html" data-icon="prof" class="ui-btn-active ui-state-">Profile</a></li>
+						<li><a href="schedule.html" data-icon="calen">Schedule</a></li>
+						<li><a href="showcase.html" data-icon="bag">Briefcase</a></li>
+						<li><a href="info.html"  data-icon="inf">Info</a></li>
 					</ul>
 				</div>
 		</div>
