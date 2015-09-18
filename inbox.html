@@ -26,8 +26,7 @@
 			</div>
 			<script>
 			$.get("http://xeamphiil.co.nf/CloudGen/GetMessages.php", { user_id:1}, function(data, status){
-				input = "admin:clicked;admin:;admin:;admin:;admin:Appointment from zeeshan karamat for topicTopic 1 at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:Appointment from zeeshan karamat for topic at and time ;admin:I want to reschedule that meeting;admin:Appointment from zeeshan karamat for topicDev at 1/1/1994 and time 01:50";
-				input = input.split(";");
+				input = data.split(";");
 				output = "";
 				for(i = 0 ; i < input.length;i++){
 					row = input[i].split(":");

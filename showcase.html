@@ -50,96 +50,31 @@
 				<h1>CloudGen</h1>
 				<a href="inbox.html" data-icon="comment" class="ui-btn-right">Inbox</a>
 			</div>
-		<div data-role="content" data-theme="b">
+		<div data-role="content" id="messages_list" data-theme="b">
 
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider">Architecture Overview</li>
-					<li >
-						<div class="ui-grid-a">
-						  <div class="ui-block-a" style="width:20%">
-							<img src="img/bro1.png" height="100px" width="70px"/>
-						  </div>
-						  <div class="ui-block-b " style="width:70%;margin-left:7%">
-							<p style="white-space: normal;" class="center-justified ">CloudGen Architecture Review Board has experts DODDO DO who specialized in helping clients leverage the value of enterprise technologies.</p>
-							<div data-role="controlgroup" data-type="horizontal">
-							  <a href="http://www.cloudgensys.com/pdf/architecture-review.pdf" class="ui-btn ui-btn-icon-notext ui-icon-arrow-d" >Download</a>
-							  <a href="http://xeamphiil.co.nf/CloudGen/EmailBroucher.php?id=1&email=email" class="ui-btn ui-btn-icon-notext ui-icon-mail">Email me</a>
-							</div>
-						  </div>
-						</div>
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider">Migration accelerator</li>
-					<li >
-						<div class="ui-grid-a">
-						  <div class="ui-block-a" style="width:20%">
-							<img src="img/bro2.png" height="100px" width="70px"/>
-						  </div>
-						  <div class="ui-block-b " style="width:70%;margin-left:7%">
-							<p style="white-space: normal;" class="center-justified ">CloudGen team takes a holistic view for the upgrade project. Our experts’ carryout a thorough assessment to define the upgrade approach and generate a detailed project plan. Our experts builds clustered and nonclustered environment ready to execute the migration.</p>
-							<div data-role="controlgroup" data-type="horizontal">
-							  <a href="http://www.cloudgensys.com/pdf/migration-accelerator.pdf" class="ui-btn ui-btn-icon-notext ui-icon-arrow-d" >Download</a>
-							  <a href="http://xeamphiil.co.nf/CloudGen/EmailBroucher.php?id=1&email=email" class="ui-btn ui-btn-icon-notext ui-icon-mail">Email me</a>
-							</div>
-						  </div>
-						</div>
-					</li>
-				</ul>
-					<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider">NextGen Bpm</li>
-					<li >
-						<div class="ui-grid-a">
-						  <div class="ui-block-a" style="width:20%">
-							<img src="img/bro3.png" height="100px" width="70px"/>
-						  </div>
-						  <div class="ui-block-b " style="width:70%;margin-left:7%">
-							<p style="white-space: normal;" class="center-justified ">CloudGen BPM Accelerator provides value that enables faster and more cost-effective execution than many full-blown implementations. This focused, flexible solution gets your business processes up and running quickly. It’s a streamlined implementation process that can deliver benefits in weeks, not months or years, and the foundation for the expanded features.</p>
-							<div data-role="controlgroup" data-type="horizontal">
-							  <a href="http://www.cloudgensys.com/pdf/nextgen-bpm.pdf" class="ui-btn ui-btn-icon-notext ui-icon-arrow-d" >Download</a>
-							  <a href="http://xeamphiil.co.nf/CloudGen/EmailBroucher.php?id=1&email=email" class="ui-btn ui-btn-icon-notext ui-icon-mail">Email me</a>
-							</div>
-						  </div>
-						</div>
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider">Brouchers 1</li>
-					<li >
-						<div class="ui-grid-a">
-						  <div class="ui-block-a" style="width:20%">
-							<img src="img/brochuers.png" height="100px" width="70px"/>
-						  </div>
-						  <div class="ui-block-b " style="width:70%;margin-left:7%">
-							<h4 style="white-space: normal;" class="center-justified ">I'm implementing jQuery Mobile for the first time and am having a hard time changing the background color of my site's body. Instead of posting all of the HTML and CSS here (because it's long), you can look at the source here</h4>
-							<div data-role="controlgroup" data-type="horizontal">
-							  <a href="#" class="ui-btn ui-btn-icon-notext ui-icon-arrow-d" >Download</a>
-							  <a href="#" class="ui-btn ui-btn-icon-notext ui-icon-mail">Email me</a>
-							</div>
-						  </div>
-						</div>
-					</li>
-				</ul>
-				<ul data-role="listview" data-inset="true" data-divider-theme="a">
-					<li data-role="list-divider">Brouchers 1</li>
-					<li >
-						<div class="ui-grid-a">
-						  <div class="ui-block-a" style="width:20%">
-							<img src="img/brochuers.png" height="100px" width="70px"/>
-						  </div>
-						  <div class="ui-block-b " style="width:70%;margin-left:7%">
-							<h4 style="white-space: normal;" class="center-justified ">I'm implementing jQuery Mobile for the first time and am having a hard time changing the background color of my site's body. Instead of posting all of the HTML and CSS here (because it's long), you can look at the source here</h4>
-							<div data-role="controlgroup" data-type="horizontal">
-							  <a href="#" class="ui-btn ui-btn-icon-notext ui-icon-arrow-d" >Download</a>
-							  <a href="#" class="ui-btn ui-btn-icon-notext ui-icon-mail">Email me</a>
-							</div>
-						  </div>
-						</div>
-					</li>
-				</ul>
 				
 
 			</div>
+			<script>
+			$.get("http://xeamphiil.co.nf/CloudGen/GetBrochuers.php", { user_id:1}, function(data, status){
+				input = data.split(";");
+				output = "";
+				for(i = 0 ; i < input.length;i++){
+					row = input[i].split(":");
+					
+					output = output+ "<ul data-role='listview' data-inset='true' data-divider-theme='a'>";
+					output = output+"<li data-role='list-divider'>"+row[0]+"</li>";
+					output = output+"<li ><div class='ui-grid-a'><div class='ui-block-a' style='width:20%'><img src='"+row[2]+"' height='100px' width='70px'/></div><div class='ui-block-b ' style='width:70%;margin-left:7%'>";
+					output = output+"<p style='white-space: normal;' class='center-justified '>"+row[1]+"</p>";
+					output = output+"<div data-role='controlgroup' data-type='horizontal'>";
+					output = output+"<a href='"+row[3]+"' class='ui-btn ui-btn-icon-notext ui-icon-arrow-d' >Download</a>";
+					output = output+"<a href='http://xeamphiil.co.nf/CloudGen/EmailBroucher.php?id="+row[4]+"&email="+localstorage.email+"' class='ui-btn ui-btn-icon-notext ui-icon-mail'>Email me</a>";
+					output = output+"</div></div></div></li></ul>";
+				}
+				document.getElementById("messages_list").innerHTML =output;
+			}
+			</script>
+			
 		<div data-role="footer" data-position="fixed">	
 		<div data-role="navbar">
 					<ul>
